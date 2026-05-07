@@ -105,43 +105,19 @@ button { width: 100%; padding: 10px; background: #f00; color: white; border: non
 
 footer { background: #000; color: white; text-align: center; padding: 15px; }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
-nav {
-    flex-direction: column;
-    gap: 6px;
-}
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
 
-.menu {
-    margin-left: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+    .menu {
+        gap: 8px;
+        font-size: 0.9rem;
+    }
 
-.portada h1 {
-    font-size: 1.4rem;
-}
-
-.portada p {
-    font-size: 0.9rem;
-}
-
-.pelicula {
-    width: 160px;
-}
-
-.pelicula img {
-    height: 220px;
-}
-
-#galeria {
-    width: 90%;
-    height: auto;
-}
-
-.botones button {
-    padding: 8px 14px;
-    font-size: 14px;
-}
+    .principal h1 {
+        font-size: 2rem;
+    }
 }
