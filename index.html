@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cine Palacio Pravia</title>
+  <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#">
+    <img src="logo.png" alt="Logo Cine" class="imagenLogo">
+    </a>
+    <div class="logo">Cine Palacio Pravia</div>
+      <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#cartelera">Cartelera</a>
+        <a href="#calculadora">Entradas</a>
+        <a href="#formulario">Contacto</a>
+      </nav>
+  </nav>
+</header>
+
+<main>
+
+  <section id="inicio" class="portada">
+    <h1>Bienvenido al Cine Palacio Pravia</h1>
+    <p>Tu sala de cine en el corazón de Pravia, Asturias</p>
+    <a href="#calculadora" class="boton">Comprar entradas</a>
+  </section>
+
+  <section id="cartelera" class="cartelera">
+    <h2>Cartelera Mayo</h2>
+    <div class="peliculas">
+        <article class="pelicula">
+            <img src="torrente.jpg" alt="Torrente">
+            <h3>Torrente: El brazo tonto de la ley</h3>
+            <p>Comedia · 1h 37min</p>
+            <span>16:00 · 18:00 · 20:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="starwars.jpg" alt="Star Wars">
+            <h3>Star Wars Ep. 3: La Venganza De Los Sith</h3>
+            <p>Ciencia Ficción · 2h 20min</p>
+            <span>16:30 · 19:30</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="piratas.jpg" alt="Piratas">
+            <h3>Piratas del Caribe: La maldición de la Perla Negra</h3>
+            <p>Acción · 2h 23min</p>
+            <span>13:00 · 15:00 · 17:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="guardianes.jpg" alt="Guardianes">
+            <h3>Guardianes de la Galaxia Vol. 3</h3>
+            <p>Ciencia Ficción · 2h 29min</p>
+            <span>12:00 · 16:00 · 18:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="avengers.jpg" alt="Avengers">
+            <h3>Marvel Avengers: Endgame</h3>
+            <p>Ciencia Ficción · 3h 1min</p>
+            <span>14:00 · 15:00 · 16:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="ocho.jpg" alt="Ocho Apellidos">
+            <h3>Ocho Apellidos Marroquís</h3>
+            <p>Comedia · 1h 37min</p>
+            <span>18:00 · 20:00 · 21:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="lacena.png" alt="La Cena">
+            <h3>La Cena</h3>
+            <p>Comedia, Drama · 1h 46min</p>
+            <span>20:00 · 20:30 · 21:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="campeones.jpg" alt="Campeones">
+            <h3>Campeones</h3>
+            <p>Comedia · 2h 4min</p>
+            <span>16:00 · 16:30 · 18:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="benhur.jpg" alt="Ben Hur">
+            <h3>Ben Hur (1959)</h3
+                ><p>Ficción Histórica · 3h 32min</p>
+                <span>12:00 · 18:00 · 21:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="harry.jpg" alt="Harry el Sucio">
+            <h3>Harry el Sucio</h3>
+            <p>Acción · 1h 42min</p>
+            <span>18:00 · 19:00 · 20:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="hora.jpg" alt="Hora Punta">
+            <h3>Hora Punta 3</h3>
+            <p>Acción, Comedia · 1h 31min</p>
+            <span>13:00 · 14:00 · 15:00</span>
+        </article>
+
+        <article class="pelicula">
+            <img src="300.jpg" alt="300">
+            <h3>300</h3>
+            <p>Drama Histórico · 1h 57min</p>
+            <span>14:00 · 15:00 · 18:00</span>
+        </article>
+    </div>
+  </section>
+    
+  <div class="galeria">
+    <img id="galeria" src="logo.png" class="imagenLogoCentro">
+    <div class="botones">
+      <button onclick="cambiar(-1)">|</button>
+      <button onclick="cambiar(1)">|</button>
+    </div>
+  </div>
+
+  <section id="calculadora" class="calculadora">
+    <h2>Compra tus entradas</h2>
+    <div class="caja">
+      <div class="campo">
+        <label for="pelicula">Película:</label>
+        <select id="pelicula">
+          <option>Torrente: El brazo tonto de la ley</option>
+          <option>Star Wars Episodio 3: La Venganza De Los Sith</option>
+          <option>Piratas del Caribe: La maldición de la Perla Negra</option>
+          <option>Guardianes de la Galaxia: Volumen 3</option>
+          <option>Marvel Avengers: Endgame</option>
+          <option>Ocho Apellidos Marroquís</option>
+          <option>La Cena</option>
+          <option>Campeones</option>
+          <option>Ben Hur (1959)</option>
+          <option>Harry el Sucio</option>
+          <option>Hora Punta 3</option>
+          <option>300</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="tipo">Tipo de entrada:</label>
+        <select id="tipo">
+          <option value="general">General (+18 años) – 7,50 €</option>
+          <option value="reducida">Reducida (jubilados o niños) – 5,00 €</option>
+          <option value="vip">VIP (butaca premium con palomitas) – 12,50 €</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="cantidad">Número de entradas:</label>
+        <input type="number" id="cantidad" min="1" max="10" value="1">
+      </div>
+      <button id="calcular">Calcular precio</button>
+      <div id="resultado" class="resultado oculto">
+        <h3>Resumen</h3>
+        <p id="textoSubtotal"></p>
+        <p id="textoIva"></p>
+        <p id="textoTotal"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="formulario">
+    <h2>Formulario de Contacto</h2>
+    <form id="contacto">
+      <div class="campo"><label for="nombre">Nombre:</label><input type="text" id="nombre" placeholder="Nombre y Apellidos" required></div>
+      <div class="campo"><label for="email">Email:</label><input type="email" id="email" placeholder="ejemplo@email.com" required></div>
+      <div class="campo"><label for="telefono">Teléfono:</label><input type="tel" id="telefono" placeholder="Número de teléfono" pattern="[0-9]+" inputmode="numeric" required></div>
+      <div class="campo"><label for="mensaje">Mensaje:</label><textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea></div>
+      <button type="submit">Enviar mensaje</button>
+      <p id="mensajeAgradecimiento" class="oculto">¡Muchas gracias por tu ayuda!</p>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Cine Pravia · C/ Agustín Bravo, 12, Pravia, Asturias · Tel: 123 45 67 89</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
