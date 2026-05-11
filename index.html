@@ -92,8 +92,8 @@
 
         <article class="pelicula">
             <img src="benhur.jpg" alt="Ben Hur">
-            <h3>Ben Hur (1959)</h3
-                ><p>Ficción Histórica · 3h 32min</p>
+            <h3>Ben Hur (1959)</h3>
+                <p>Ficción Histórica · 3h 32min</p>
                 <span>12:00 · 18:00 · 21:00</span>
         </article>
 
@@ -123,14 +123,15 @@
   <div class="galeria">
     <img id="galeria" src="logo.png" class="imagenLogoCentro">
     <div class="botones">
-      <button onclick="cambiar(-1)">|</button>
-      <button onclick="cambiar(1)">|</button>
+      <!-- Ese id &#9664; hace que se vean las flechas porque <> no son correctos-->
+      <button onclick="cambiar(-1)">&#9664;</button>
+      <button onclick="cambiar(1)">&#9654;</button>
     </div>
   </div>
 
   <section id="calculadora" class="calculadora">
     <h2>Compra tus entradas</h2>
-    <div class="caja">
+    <div class="contenedorPelis">
       <div class="campo">
         <label for="pelicula">Película:</label>
         <select id="pelicula">
@@ -174,7 +175,7 @@
     <h2>Formulario de Contacto</h2>
     <form id="contacto">
       <div class="campo"><label for="nombre">Nombre:</label><input type="text" id="nombre" placeholder="Nombre y Apellidos" required></div>
-      <div class="campo"><label for="email">Email:</label><input type="email" id="email" placeholder="ejemplo@email.com" required></div>
+      <div class="campo"><label for="email">Email:</label><input type="email" id="email"placeholder="ejemplo@gmail.com"pattern=".+@gmail\.com"required></div>
       <div class="campo"><label for="telefono">Teléfono:</label><input type="tel" id="telefono" placeholder="Número de teléfono" pattern="[0-9]+" inputmode="numeric" required></div>
       <div class="campo"><label for="mensaje">Mensaje:</label><textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea></div>
       <button type="submit">Enviar mensaje</button>

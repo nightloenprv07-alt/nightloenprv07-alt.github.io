@@ -1,53 +1,32 @@
 // Cuando hago click en el botón calcular
 document.getElementById("calcular").addEventListener("click", function () {
+  var cantidad = parseInt(document.getElementById("cantidad").value); // Guardamos el número de entradas
 
-  // 1. Con esto obtenemos los datos que nos da el usuario
-  var tipo = document.getElementById("tipo").value;        // Aquí se busca el tipo de entrada
-  var cantidad = parseInt(document.getElementById("cantidad").value); // Y aquí el número de ellas
+  if (cantidad < 1 || cantidad > 20) // Comprueba que la cantidad esté entre 1 y 20
+    return alert("Onde vas comprando tantas, nun hay sitio, el límite es 20");
 
-  // 2. Esta es la definición de la variable precio que uso abajo para hallar más datos
-  var precio = 0;
-
-  // 3. Con estos IF y ELSE IF compruebo que tipo de entrada es
-  if (tipo === "general") {
-    precio = 7.5;
-  } 
-  else if (tipo === "reducida") {
-    precio = 5;
-  } 
-  else if (tipo === "vip") {
-    precio = 12.5;
-  }
-
-  // 4. Calculos para hallar el subtotal, IVA (puesto a mano) y total que es la suma de subtotal e IVA
-  var subtotal = precio * cantidad;
+  var precios = { general: 7.5, reducida: 5, vip: 12.5 }; // Precios de cada tipo de entrada
+  var subtotal = precios[document.getElementById("tipo").value] * cantidad; // Calculamos subtotal e IVA
   var iva = subtotal * 0.21;
-  var total = subtotal + iva;
 
-  // 5. Esto muestra los resultados Subtotal (sin iva), el porcentaje de IVA, que es 21% y luego el precio total
+  // Mostramos los resultados en pantalla
   document.getElementById("textoSubtotal").textContent = "Subtotal: " + subtotal.toFixed(2) + " €";
   document.getElementById("textoIva").textContent = "IVA: " + iva.toFixed(2) + " €";
-  document.getElementById("textoTotal").textContent = "TOTAL: " + total.toFixed(2) + " €";
-
-  // 6. Mostrar la caja de resultados en donde irá el cargo a pagar
-  document.getElementById("resultado").classList.remove("oculto");
-});
-// Cuando envío el formulario
-document.getElementById("contacto").addEventListener("submit", function(e) {
-
-  // Evita que la página se recargue al enviar cosa que queda bastante mal
-  e.preventDefault();
-
-  // Mensaje de Agradecimiento
-  document.getElementById("mensajeAgradecimiento").classList.remove("oculto");
-
+  document.getElementById("textoTotal").textContent = "TOTAL: " + (subtotal + iva).toFixed(2) + " €";
+  document.getElementById("resultado").classList.remove("oculto"); // Hace visible la caja del resultado
 });
 
-//galeria de fotos, definicion y función de cambio
-var imagenes = ["logo.png", "teatro.jpg", "teatroViejo.jpg"];
-var i = 0;
+// Cuando se envía el formulario
+document.getElementById("contacto").addEventListener("submit", function (e) {
+  e.preventDefault(); // Evita que la página se recargue
+  document.getElementById("mensajeAgradecimiento").classList.remove("oculto"); // Muestra el mensaje de agradecimiento
+});
 
+var imagenes = ["logo.png", "teatro.jpg", "teatroViejo.jpg"]; // Lista de imágenes de la galería
+var i = 0; // Imagen actual
+
+// Función para cambiar imagen
 function cambiar(d) {
-  i = (i + d + imagenes.length) % imagenes.length;
-  document.getElementById("galeria").src = imagenes[i];
+  i = (i + d + imagenes.length) % imagenes.length; // Cambia a la siguiente o anterior imagen
+  document.getElementById("galeria").src = imagenes[i]; // Cambia el src de la imagen
 }
